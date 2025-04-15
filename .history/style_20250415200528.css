@@ -1,0 +1,1316 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap');
+
+
+:root {
+  --primary-color: #e74c3c;
+  --secondary-color: #333;
+  --background-color-light: rgb(243, 242, 229);
+  --background-color-dark: rgba(0, 0, 0, 0.8);
+  --text-color-light: white;
+  --text-color-dark: #333;
+  --hover-color: #c0392b;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Comfortaa', sans-serif;
+  background-color: var(--secondary-color);
+  color: var(--text-color-light);
+  margin: 0;
+  overflow-x: hidden;
+}
+
+.html{
+  font-size: 62.5%;
+ 
+  scroll-behavior: smooth;
+  
+}
+
+.container {
+  background-color: rgb(243, 242, 229);
+  transform-origin: top left;
+  transition: transform 0.5s linear;
+  width: 100vw;
+  min-height: 100vh;
+  padding: 40px 20px;
+  position: relative; /* Mantiene il contenuto visibile sopra */
+  z-index: 1;
+    display: flex;
+  justify-content: center; /* Centra il contenuto */
+  align-items: flex-start; /* Posiziona gli elementi sopra */
+  flex-direction: column; /* Per colonne anziché righe */
+  gap: 30px; /* Spaziatura tra gli elementi */
+  padding: 20px; /* Riduce i padding su schermi piccoli */
+  
+
+  padding-top: 1rem; /* Rimuove spazio sopra il contenuto */
+  margin-top: 0;  /* Riduce lo spazio tra hero e contenuto */
+
+
+  display: flex; /* Usa flexbox */
+  justify-content: flex-end; /* Allinea tutto il contenuto a destra */
+  align-items: center; /* Allinea verticalmente al centro */
+}
+
+p {
+  line-height: 1.8;
+  margin-bottom: 20px;
+  max-width: 600px; /* Limita la larghezza del paragrafo */
+  width: 100%; /* Assicura che prenda tutta la larghezza fino a 600px */
+  margin-left: auto; /* Spinge il paragrafo a destra */
+  margin-right: 0; /* Elimina margine destro */
+}
+
+.other-content {
+  margin-left: 20px; /* Distanza dal paragrafo */
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  position: relative;
+  border-radius: 50px;
+}
+/* Quando la classe .show-nav è aggiunta, la nav si sposterà in alto e diventa visibile */
+.container.show-nav nav {
+  bottom: 0; /* La nav si sposterà in alto */
+  opacity: 1; /* La nav diventa visibile */
+}
+
+/* Cerchio del menu */
+.circle-container {
+  position: fixed;
+  top: -100px;
+  left: -100px;
+  z-index: 9999;  /* Aggiungi un valore molto alto per assicurarne la visibilità sopra gli altri contenuti */
+}
+
+.circle {
+  background-color: rgb(255, 255, 255);
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+  position: relative;
+  transition: transform 0.5s linear;
+}
+
+.circle button#open {
+  left: 60%;
+}
+
+.circle button#close {
+  top: 60%;
+  transform: rotate(90deg);
+  transform-origin: top left;
+}
+
+/* Ruota il cerchio quando il menu è aperto */
+.container.show-nav .circle {
+  transform: rotate(-70deg); /* Rotazione del cerchio */
+}
+
+/* Bottoni nel cerchio */
+.circle button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 100px;
+  background: transparent;
+  border: none;
+  font-size: 1.5rem;
+  color: white;
+  cursor: pointer;
+  transform: translate(-50%, -50%);
+}
+
+
+.circle button {
+
+  border: none;
+  font-size: 1.5rem;
+  color: #333;
+  padding: 10px;
+  cursor: pointer;
+ 
+}
+
+.circle button:hover {
+  transform: scale(1.1);
+  color: #161817; /* Colore verde quando hover */
+}
+
+
+/* Nav con sfondo trasparente e visibilità */
+nav {
+  position: fixed;
+  left: 0;
+  bottom: -100%; /* Nav parte fuori dalla vista, sotto */
+  width: 100%;
+  opacity: 0; /* La nav è invisibile inizialmente */
+  z-index: 100;
+  background-color: rgba(51, 51, 51, 0.8); /* Sfondo semi-trasparente */
+  transition: bottom 0.5s ease, opacity 0.5s ease;
+  overflow: hidden; /* Nasconde eventuali righe indesiderate */
+  color: white;
+  padding: 20px;
+  box-sizing: border-box; /* Include il padding nelle dimensioni */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centra gli elementi */
+  gap: 20px; /* Distanza tra gli elementi */
+}
+
+
+nav ul li a {
+  color: white; /* Imposta il colore del testo dei link a bianco */
+  text-decoration: none;
+  font-size: 18px;
+  transition: color 0.3s; /* Aggiungi una transizione per l'effetto hover */
+}
+nav ul li a:hover {
+  color: #e74c3c; /* Colore rosso per l'icona quando il mouse passa sopra */
+}
+
+/* Stile per la lista nella nav */
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+nav ul li {
+  padding: 10px;
+  color: white;
+ 
+}
+
+nav ul li i {
+  margin-right: 10px;
+  
+}
+
+
+/* Footer */
+footer {
+  background-color: #222; /* Colore di sfondo scuro */
+  padding: 20px 0;
+  text-align: center;
+  color: #fff;
+  position: relative;
+  bottom: 0;
+  width: 40vw;
+  text-align: center;
+  justify-content: center;
+  padding-left: 3rem; /* Assicurati che il padding sia uguale a quello delle altre sezioni */
+  padding-right: 1rem; /* Allineato a destra */
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+
+  flex-wrap: wrap; /* Permette di fare il wrap su schermi più piccoli */
+
+}
+
+
+
+/* Media Query per dispositivi più piccoli */
+@media (max-width: 768px) {
+  .footer-links {
+    flex-direction: column;
+  }
+
+  .footer-social {
+    flex-direction: column;
+  }
+
+  .footer-links a, .footer-social a {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-links {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .footer-social {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+
+
+/* Social media links */
+.social-left a {
+  display: inline-block;
+  margin: 0 10px;
+  color: white;
+  font-size: 20px;
+  text-decoration: none;
+}
+
+.social-left a:hover {
+  color: #e74c3c; /* Colore di hover */
+}
+
+/* Style per le icone dei social */
+.social-left i {
+  margin-right: 5px;
+}
+.left-content {
+  position: fixed; /* Posizionamento assoluto all'interno del container */
+  top: 400px;  /* Distanza dal bordo superiore */
+  left: 0;    /* Allineamento a sinistra */
+  width: 1.5rem; /* Imposta la larghezza */
+  height: 80%; /* Riempi l'intera altezza */
+  color: #fff;
+  
+  background-color: rgba(0, 0, 0, 0.5); /* Aggiungi un background semitrasparente per visibilità */
+  box-sizing: border-box; /* Include il padding nelle dimensioni */
+    flex: 1 1 60%; /* Rende il div flessibile e occupa il 60% dello spazio disponibile */
+  min-width: 250px; /* Impedisce che vada sotto una larghezza troppo piccola */
+ 
+  box-sizing: border-box;
+  
+    padding: 30px;
+    border-radius: 40px;
+    padding-top: 10rem;
+  }
+
+  @media (max-width: 1024px) {
+    .left-content {
+      top: 400px;        /* parte più in basso */
+      height: 80%;       /* meno alta */
+      padding-top: 10rem; /* meno spazio sopra */
+    }
+  }
+  @media (max-width: 1100px) and (min-width: 900px) {
+    .left-content {
+      top: 500px;
+    }
+  }
+
+
+.left-content a {
+  padding-top: 1rem;
+  display: flex;
+  margin-bottom: 15px;
+  text-decoration: none;
+  color: white;
+  font-size: 18px;
+}
+
+.left-content a:hover {
+  color: #e74c3c; /* Colore hover */
+}
+
+
+.bg {
+  width: calc(100vw + 60px);
+  height: calc(100vw + 60px);  /* Imposta l'altezza a tutta l'altezza della finestra del browser */
+  background: url('https://images.unsplash.com/photo-1498837167922-ddd27525d352?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') no-repeat center center;
+  background-size: cover;  /* Imposta l'immagine di sfondo per coprire l'intero schermo */
+  position: absolute;
+  margin-bottom: 1rem;
+  top: -30px;
+  left: -30px;
+  z-index: -1; /* Fa in modo che lo sfondo venga dietro gli altri contenuti */
+  filter: blur(70px);
+}
+
+.loading-container {
+  text-align: center;
+  
+  position: relative; /* Rende possibile la posizione assoluta del testo */
+  display: inline-block; /* Mantiene le dimensioni dell'immagine */
+}
+
+
+.loading-image {
+  width: 100%; /* Mantiene l'immagine responsive */
+  height: auto;
+  filter: blur(5px); /* Effetto sfocatura per indicare caricamento */
+  animation: fadeInOut 1.5s infinite alternate ease-in-out; /* Effetto di apparizione */
+}
+
+.loading-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 32px;
+  font-weight: bold;
+  color: white;
+  background: rgba(0, 0, 0, 0.5); /* Sfondo scuro trasparente */
+  padding: 10px 20px;
+  border-radius: 5px;
+  opacity: 1;
+  transition: opacity 0.5s ease-out;
+}
+/* Immagine di sfondo caricamento */
+.loading-bg {
+  background-image: url('https://images.unsplash.com/photo-1685476331107-bf917b1860f7?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTAwfHxzZm9uZGklMjBsdW1pbm9zaXxlbnwwfHwwfHx8Mg%3D%3D');
+  background-size: cover;
+  background-position: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  filter: blur(0px);
+  z-index: -1; /* Posiziona l'immagine dietro al contenuto */
+  transition: filter 0.3s ease;
+}
+
+
+.healthy {
+  text-align: center;
+  margin: 50px 0; /* Riduci il margin-top per spostare la sezione più in alto */
+}
+
+.healthy h2 {
+  font-size: 2em;
+  color: #333;
+}
+
+.healthy p {
+  font-size: 1.2em;
+  color: #555;
+}
+
+.read-more {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 1.1em;
+  color: white;
+  background-color: #e74c3c;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.read-more:hover {
+  background-color: #c0392b;
+}
+
+
+/* Contenuto dell'articolo */
+.article-content {
+  padding: 50px;
+  max-width: 800px;
+  margin: 0 auto;
+  background-color: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  position: relative;
+}
+
+.article-content h1 {
+  font-size: 2.5em;
+  color: #333;
+}
+
+.content
+{
+  font-size: 1.2rem;
+}
+
+.article-content h2 {
+  font-size: 2em;
+  margin-top: 20px;
+  color: #333;
+}
+
+.article-content p {
+  font-size: 1.2em;
+  line-height: 1.6;
+  color: #555;
+}
+
+/* Bottone per tornare alla home */
+.back-to-home {
+  display: inline-block;
+  margin-top: 30px;
+  padding: 10px 20px;
+  background-color: #e74c3c;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 1.1em;
+  transition: background-color 0.3s ease;
+}
+
+.back-to-home:hover {
+  background-color: #c0392b;
+}
+/* Sezione commenti in modalità chiara */
+.comments-section {
+  margin-top: 30px;
+  padding: 20px;
+  background-color: #333; /* Sfondo scuro per la modalità chiara */
+  border-radius: 8px;
+  color: white; /* Testo chiaro */
+}
+
+/* Commenti in modalità chiara */
+.comment {
+  background-color: #444; /* Sfondo commento scuro */
+  padding: 10px;
+  border-radius: 6px;
+  margin-bottom: 10px;
+  color: white; /* Testo chiaro nei commenti */
+}
+
+/* Campo commento e bottone in modalità chiara */
+#comment-form input, #comment-form textarea {
+  background-color: #555; /* Sfondo input scuro */
+  color: white; /* Testo chiaro */
+  border: 1px solid #666;
+}
+
+#comment-form button {
+  background-color: #5cb85c; /* Colore verde per il bottone */
+  color: white;
+}
+
+.comments-section h2 {
+  font-size: 24px;
+}
+
+#comments-container {
+  margin-top: 20px;
+}
+
+
+#comment-form {
+  margin-top: 20px;
+}
+
+#comment-form input, #comment-form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+}
+
+#comment-form button {
+  padding: 10px 15px;
+  background-color: #5cb85c;
+  color: white;
+  border: none;
+  border-radius: 4px;
+}
+.dark-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 999;
+  background-color: #f5f1f1;
+  color: white;
+  border: none;
+  padding: 10px 12px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 20px;
+  transition: background-color 0.3s ease;
+}
+
+.dark-toggle:hover {
+  background-color: #fcf6f6;
+}
+
+
+
+
+
+
+.dark-mode a {
+  color: #fff; /* Colore dei link in modalità scura */
+}
+
+/* Altri stili specifici per il dark mode */
+.dark-mode .left-content {
+  background-color: rgba(0, 0, 0, 0.7); /* Sfondo più scuro per il contenuto a sinistra */
+}
+
+.dark-mode .loading-text {
+  background-color: rgb(255, 255, 255);
+}
+
+.dark-mode nav {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+
+
+body.dark-mode .bg {
+  filter: brightness(50%) blur(0px); /* Se vuoi anche il filtro sull'altra immagine di sfondo */
+}
+
+
+
+/* Quando la modalità dark è attiva, cambia l'immagine */
+body.dark-mode .loading-bg {
+  background-image: url('https://images.unsplash.com/photo-1699951898324-7ac3c17788d1?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+  opacity: 1; /* Mostra l'immagine scura */
+}
+
+/* Nascondi l'immagine chiara quando la modalità dark è attiva */
+body.dark-mode .loading-bg.light {
+  opacity: 0; /* Nasconde l'immagine chiara */
+}
+
+.dark-mode .loading-text {
+  color: white;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.loading-bg.dark{
+  color: #fff;
+}
+
+/* Colore testo chiaro in modalità dark */
+.dark-mode .left-content {
+  color: white;
+}
+
+/* Testo articoli in modalità dark */
+.dark-mode .article-content p {
+  color: white;
+}
+
+/* Testo contenuto dell'articolo in modalità dark */
+.dark-mode .content h1,
+.dark-mode .content h2,
+.dark-mode .content h3,
+.dark-mode .content p {
+  color: white; /* Imposta il colore del testo a bianco */
+}
+
+
+/* Sezione commenti in modalità scura (sfondo chiaro, testo scuro) */
+.dark-mode .comments-section {
+  margin-top: 30px;
+  padding: 20px;
+  background-color: #f4f4f4; /* Sfondo chiaro */
+  border-radius: 8px;
+  color: #333; /* Testo scuro */
+}
+
+/* Commenti in modalità scura (sfondo chiaro e testo scuro) */
+.dark-mode .comment {
+  background-color: #fff; /* Sfondo chiaro per i commenti */
+  padding: 10px;
+  border-radius: 6px;
+  margin-bottom: 10px;
+  color: #333; /* Testo scuro nei commenti */
+}
+
+/* Campo commento e bottone in modalità scura (sfondo chiaro e testo scuro) */
+.dark-mode #comment-form input, .dark-mode #comment-form textarea {
+  background-color: #fff; /* Sfondo chiaro per i campi di input */
+  color: #333; /* Testo scuro nei campi di input */
+  border: 1px solid #ddd;
+}
+
+.dark-mode #comment-form button {
+  background-color: #5cb85c; /* Colore verde per il bottone */
+  color: white;
+}
+
+/* In modalità scura, cambia il colore dei titoli */
+.dark-mode .comments-section h2, .dark-mode .comments-section h3 {
+  color: #1a1919; /* Testo chiaro per la modalità scura */
+}
+
+
+
+/* Stili base per schermi più grandi */
+@media screen and (max-width: 1200px) {
+  .container {
+    padding: 30px;
+  }
+
+  .article-content {
+    padding: 30px;
+  }
+
+  .healthy h2 {
+    font-size: 1.8em;
+  }
+
+  .healthy p {
+    font-size: 1.1em;
+  }
+
+  .read-more {
+    font-size: 1em;
+  }
+
+  .left-content {
+    width: 150px;
+    top: 120px;
+  }
+
+  .bg {
+    width: calc(100vw + 40px);
+    height: calc(100vw + 40px);
+  }
+}
+
+/* Stili per schermi di tablet (fino a 768px) */
+@media screen and (max-width: 768px) {
+  .container {
+    padding: 20px;
+  }
+
+  .article-content {
+    padding: 20px;
+  }
+
+  .healthy h2 {
+    font-size: 1.6em;
+  }
+
+  .healthy p {
+    font-size: 1em;
+  }
+
+  .left-content {
+    width: 100px;
+    top: 100px;
+  }
+
+  .bg {
+    width: 100vw;
+    height: 100vw;
+  }
+
+  /* Modifica la nav per schermi più piccoli */
+  nav {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  nav ul {
+    width: 100%;
+  }
+
+  nav ul li {
+    padding: 10px;
+    width: 100%;
+    text-align: left;
+  }
+
+  /* Icone social a sinistra */
+  .social-left {
+    left: 10px;
+    top: 50%;
+    font-size: 18px;
+  }
+}
+
+/* Stili per schermi di dispositivi mobili (fino a 480px) */
+@media screen and (max-width: 480px) {
+  .container {
+    padding: 15px;
+  }
+
+  .article-content {
+    padding: 15px;
+  }
+
+  .healthy h2 {
+    font-size: 1.4em;
+  }
+
+  .healthy p {
+    font-size: 0.9em;
+  }
+
+  .left-content {
+    width: 80px;
+    top: 80px;
+  }
+
+  .bg {
+    width: 100vw;
+    height: 100vw;
+  }
+
+  .circle {
+    height: 150px;
+    width: 150px;
+  }
+
+  .circle button {
+    font-size: 22px;
+  }
+
+  .loading-text {
+    font-size: 24px;
+  }
+
+  .article-content h1 {
+    font-size: 2em;
+  }
+
+  .article-content h2 {
+    font-size: 1.6em;
+  }
+
+  .article-content p {
+    font-size: 1em;
+  }
+
+  /* Bottone "read more" e altri bottoni si adattano */
+  .read-more {
+    font-size: 0.9em;
+  }
+
+  .back-to-home {
+    font-size: 0.9em;
+  }
+
+  /* Commenti in modalità mobile */
+  #comment-form input, #comment-form textarea {
+    padding: 8px;
+  }
+
+  #comment-form button {
+    font-size: 1rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .left-content {
+    position: relative !important;  /* Rimuove il posizionamento assoluto */
+    top: 0 !important;               /* Rimuove il distacco dal top */
+    left: 0 !important;              /* Rimuove l'allineamento a sinistra forzato */
+    width: 100% !important;          /* Occupa tutta la larghezza disponibile */
+    min-width: 0 !important;         /* Annulla il min-width, se necessario */
+    height: auto !important;         /* Non forzare un'altezza fissa */
+    padding: 10px;                   /* Puoi ridurre il padding per dispositivi piccoli */
+    box-sizing: border-box;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .left-content {
+    position: relative !important;  /* Rimuove il posizionamento assoluto */
+    top: 0 !important;               /* Rimuove l'offset superiore */
+    left: 0 !important;              /* Rimuove l'offset sinistro */
+    width: 100% !important;          /* Occupa tutta la larghezza del contenitore */
+    min-width: 0 !important;         /* Annulla il min-width impostato */
+    height: auto !important;         /* Lascia che l'altezza si adatti al contenuto */
+    padding: 15px;                   /* Eventualmente riduci il padding */
+    box-sizing: border-box;
+
+  }
+  .social-left {
+    position: relative; /* Rimuove la posizione assoluta */
+    top: auto;
+    left: auto;
+    transform: none;
+    flex-direction: column;        /* Dispone le icone in una fila */
+    justify-content: center;    /* Centra le icone orizzontalmente */
+    gap: 10px;                  /* Spazio tra le icone */
+    padding: 10px 0;            /* Puoi aggiungere padding verticale se serve */
+  }
+  
+  /* Se vuoi ingrandire o ridurre le icone, puoi modificare il font-size: */
+  .social-left a {
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .social-left {
+    position: relative; /* Rimuove la posizione assoluta */
+    top: auto;
+    left: auto;
+    transform: none;
+    flex-direction: column;        /* Dispone le icone in una fila */
+    justify-content: center;    /* Centra le icone orizzontalmente */
+    gap: 10px;                  /* Spazio tra le icone */
+    padding: 10px 0;            /* Puoi aggiungere padding verticale se serve */
+  }
+  
+  /* Se vuoi ingrandire o ridurre le icone, puoi modificare il font-size: */
+  .social-left a {
+    font-size: 16px;
+  }
+}
+
+
+/* Stili per schermi più grandi (dispositivi desktop e tablet) */
+@media screen and (min-width: 1200px) {
+  /* Nascondi il pannello Curiosità su schermi grandi */
+  .container .curiosity-panel {
+    display: none; /* Nasconde il pannello Curiosità su schermi più grandi */
+  }
+
+  /* Rendi visibile o fai apparire il pannello Curiosità in un'altra posizione se necessario */
+  .container .normal-panel {
+    display: block; /* Mostra il pannello normale su schermi grandi */
+  }
+}
+
+/* Stili per schermi più piccoli (dispositivi mobili e tablet) */
+@media screen and (max-width: 1200px) {
+  /* Pannello Curiosità visibile sui dispositivi più piccoli */
+  .container .curiosity-panel {
+    display: block; /* Rende visibile il pannello Curiosità */
+  }
+
+  .container .normal-panel {
+    display: none; /* Nasconde il pannello normale sui dispositivi mobili */
+  }
+}
+
+
+
+.content {
+  width: 80%;  /* Opzionale, per una larghezza proporzionata */
+  margin-left: 24rem;  /* Aggiunge un margine di 30px a sinistra */
+  margin-right: 10rem; /* Imposta margini automatici per centrare il contenuto */
+  margin-top: 20px; /* Aggiunge margine superiore */
+  margin-bottom: 1rem; /* Aggiunge margine inferiore */
+  padding: 3rem; /* Aggiunge padding interno per dare più spazio */
+  font-size: 16px;
+  
+  border-radius: 8px;  /* Rende gli angoli arrotondati */
+}
+
+/* Media Query per tablet */
+@media (max-width: 768px) {
+  .content {
+      width: 90%;  /* Aumentiamo la larghezza su tablet */
+      margin-left: 2rem;  /* Riduciamo il margine a sinistra */
+      margin-right: 2rem;
+      padding: 15px;  /* Riduciamo il padding */
+  }
+}
+
+/* Media Query per dispositivi mobili (smartphone) */
+@media (max-width: 480px) {
+  .content {
+      width: 95%;  /* Ancora più largo su dispositivi piccoli */
+      margin-left: 1rem;  /* Riduciamo ulteriormente il margine a sinistra */
+      margin-right: 1rem;
+      padding: 10px;  /* Riduciamo ulteriormente il padding */
+      font-size: 14px;  /* Riduciamo la dimensione del font per dispositivi piccoli */
+  }
+}
+
+/* Content Section */
+.content {
+  padding: 40px 20px; /* Più spazio per il contenuto del blog */
+
+  color: #333;
+  z-index: 1;
+  transition: background-color 0.3s ease-in-out;
+}
+
+/* Aggiungi una transizione visiva tra Hero e Blog */
+.content {
+
+  padding: 20px;
+  transition: padding 0.3s ease, background-color 0.3s ease;
+}
+
+.content h1 {
+  font-size: 2.5rem;
+  color: #0e0d0d;
+}
+
+/* Hero Section */
+.hero {
+  position: relative;
+  height: 50vh; /* Ridotto al 50% dell'altezza della finestra */
+  width: 100%;
+  transition: height 0.3s ease-in-out; /* Transizione per il cambio di altezza */
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-bottom: 0;  /* Rimuove spazio tra hero e contenuto */
+  background-image: url('https://images.unsplash.com/photo-1605296867304-46d5465a13f1?q=80&w=1600&auto=format&fit=crop');
+  background-size: cover;
+  background-position: center;
+  filter: brightness(0.5);
+}
+
+.hero-bg {
+  background-image: url('https://images.unsplash.com/photo-1605296867304-46d5465a13f1?q=80&w=1600&auto=format&fit=crop');
+  background-size: cover;
+  background-position: center;
+  filter: blur(10px) brightness(0.7);
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+}
+
+.hero-content {
+  color: white;
+  z-index: 1;
+  padding: 0 20px;
+  margin-top: 0rem;
+  max-width: 800px;
+}
+
+.hero-content h1 {
+  margin-top: 1rem;
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.hero-content p {
+  font-size: 1.25rem;
+ 
+    margin-bottom: 1.5rem; /* Distanza un po' più contenuta */
+  }
+
+
+.hero-button {
+  background-color: #10b981;
+  color: white;
+  padding: 12px 28px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.hero-button:hover {
+  background-color: #059669;
+}
+
+.content {
+  margin-top: -20px; /* Rimuove spazio sopra la sezione di contenuto */
+  padding-top: 20px; /* Aggiunge uno spazio visibile sotto il hero */
+}
+
+
+
+
+/* Sezione Cards */
+.section-cards {
+  background-color: #f7f7f7;  /* Colore chiaro per un look pulito */
+  padding: 50px 0;
+  text-align: center;
+  margin-top: 40px;
+}
+
+.section-cards h2 {
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 30px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  border-bottom: 2px solid #007bff; /* Linea sotto il titolo */
+  display: inline-block;
+  padding-bottom: 10px;
+}
+
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Grid responsivo */
+  gap: 30px;
+  padding: 0 20px;
+}
+
+.card {
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  padding: 20px;
+  max-width: 100%;
+}
+
+.card:hover {
+  transform: translateY(-10px); /* Effetto hover */
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.card-img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.card-body {
+  padding: 10px 0;
+}
+
+.card-title {
+  font-size: 1.7rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.card-text {
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 15px;
+  line-height: 1.6;
+}
+
+.card-link {
+  font-size: 1.1rem;
+  color: #007bff;
+  text-decoration: none;
+  font-weight: 600;
+  display: inline-block;
+  transition: color 0.3s ease;
+}
+
+.card-link:hover {
+  color: #0056b3;
+  text-decoration: underline;
+}
+
+/* Stile responsive per schermi piccoli */
+@media (max-width: 768px) {
+  .section-cards h2 {
+    font-size: 2rem;  /* Ridurre la dimensione del titolo sui dispositivi più piccoli */
+  }
+
+  .cards-container {
+    grid-template-columns: 1fr 1fr; /* Due colonne su tablet e dispositivi più piccoli */
+  }
+}
+
+@media (max-width: 480px) {
+  .cards-container {
+    grid-template-columns: 1fr; /* Una colonna su schermi molto piccoli */
+  }
+
+  .card {
+    padding: 15px;
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .footer-content {
+    padding: 0 10px;
+  }
+
+  .footer-social {
+    gap: 15px;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  footer {
+    font-size: 0.9rem;
+    padding: 30px 10px;
+  }
+
+  .footer-social {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+}
+
+
+
+/* Centra tutto il contenuto, immagini, e cards tra 700px e 900px */
+@media (min-width: 700px) and (max-width: 900px) {
+  .content, .section-cards, .hero-content, .cards-container, .card {
+    width: 90%; /* Usa il 90% della larghezza disponibile */
+    margin: 0 auto; /* Centra gli elementi */
+  }
+
+  /* Centra il contenuto del hero */
+  .hero-content {
+    text-align: center; /* Centra il testo dentro il hero */
+  }
+
+  /* Centra le cards nel contenitore */
+  .cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Sistema il grid layout */
+    gap: 30px;
+    padding: 0 20px;
+  }
+
+  /* Centra il contenuto della sezione cards */
+  .section-cards h2 {
+    text-align: center;
+  }
+
+  /* Sezione immagini */
+  .card-img {
+    margin: 0 auto; /* Centra l'immagine nelle card */
+  }
+
+  /* Centra il footer */
+  footer {
+    max-width: 900px; /* Imposta la larghezza massima del footer */
+    margin: 0 auto; /* Centra il footer */
+    padding: 20px;
+  }
+}
+
+/* Modifiche per schermi più piccoli sotto i 700px */
+@media (max-width: 768px) {
+  .footer-links {
+    flex-direction: column;
+  }
+
+  .footer-social {
+    flex-direction: column;
+  }
+
+  .footer-links a, .footer-social a {
+    font-size: 1rem;
+  }
+
+  .content, .section-cards, .cards-container {
+    width: 100%; /* Adatta tutto al 100% della larghezza disponibile */
+    margin: 0; /* Rimuove margini inutili */
+  }
+
+  .hero-content {
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-links {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .footer-social {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+
+
+
+
+
+
+
+/* Stili generali per le cards (modalità chiara) */
+.card {
+  background-color: white;
+  color: black;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card-img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.card-body {
+  padding: 10px;
+}
+
+.card-title {
+  font-size: 1.2rem;
+  color: #333;
+}
+
+.card-text {
+  font-size: 1rem;
+  color: #666;
+}
+
+.card-link {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.card-link:hover {
+  text-decoration: underline;
+}
+
+/* Modalità scura: stili per le cards quando il tema scuro è attivo */
+.dark-mode .card {
+  background-color: #333;  /* Background scuro */
+  color: white;  /* Testo bianco per contrasto */
+  box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2);  /* Ombra chiara */
+}
+
+.dark-mode .card-title {
+  color: #fff;  /* Colore del titolo bianco */
+}
+
+.dark-mode .card-text {
+  color: #bbb;  /* Colore del testo grigio chiaro */
+}
+
+.dark-mode .card-link {
+  color: #4fa3f7;  /* Colore blu chiaro per i link */
+}
+
+.dark-mode .card-link:hover {
+  color: #ffffff;  /* Colore del link durante l'hover */
+}
+
+/* Sezione delle cards con il tema scuro attivo */
+.dark-mode .section-cards {
+  background-color: #222;  /* Background scuro per la sezione */
+  padding: 40px;
+}
+
+.dark-mode .cards-container {
+  display: flex;
+  gap: 20px;
+}
+
+.dark-mode .card {
+  background-color: #444;  /* Background scuro per ogni card */
+  color: white;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.dark-mode .card .card-title {
+  color: #fff;
+}
+
+.dark-mode .card .card-text {
+  color: #ccc;
+}
+
+.dark-mode .card .card-link {
+  color: #76c7f2;  /* Colore dei link blu chiaro */
+}
+

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Project</title>
+  </head>
+
+  <body>
+    <div class="hero" id="home">
+      <div class="hero-bg"></div>
+      <div class="hero-content">
+        <h1>Benvenuto nel Mondo del Benessere</h1>
+        <p>Scopri come migliorare la tua vita attraverso allenamento e alimentazione.</p>
+        <a href="#cards" class="hero-button">Scopri di più</a>
+      </div>
+    </div>
+
+    <!-- il resto del contenuto -->
+    <div class="container">
+      <button class="dark-toggle" onclick="toggleDark()">🌓</button>
+      <!-- Immagine di sfondo caricamento -->
+      <div class="loading-bg light">
+        <img src="" alt="Caricamento..." class="loading-bg">
+      </div>
+
+      <div class="loading-bg dark">
+      </div>
+
+      <!-- Contenuto a sinistra -->
+      <div class="left-content">
+        <h3>Curiosità sul benessere</h3>
+
+        <div class="loading-container">
+          <img src="https://images.unsplash.com/photo-1498837167922-ddd27525d352?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Caricamento..." class="loading-image">
+          <div class="loading-text">0%</div>
+        </div>
+
+        <!-- Div separato per il contenuto "Healthy" -->
+        <div class="healthy">
+          <small>Healthy Living Discover the secrets to a healthier lifestyle with our tips on eating well and staying active.</small>
+          <a href="article.html" class="read-more">Read More</a>
+        </div>
+      </div>
+
+      <div class="circle-container" >
+        <div class="circle">
+          <button id="close">
+            <i class="fas fa-times"></i>
+          </button>
+          <button id="open">
+            <i class="fas fa-bars"></i>
+          </button>
+        </div>
+      </div>
+
+      <div class="content">
+        <!--<h1>Blog Benessere e Allenamento</h1>
+        <small>
+          <h1>Vivere Bene: Come Allenamento e Dieta Possono Trasformare la Tua Vita</h1>
+        </small>
+        <p>In un mondo sempre più frenetico, trovare l'equilibrio tra corpo e mente è essenziale. Il benessere fisico e mentale non sono solo una questione estetica, ma una priorità per una vita sana. Un corretto allenamento fisico, insieme a una dieta equilibrata, è la combinazione perfetta per raggiungere questo obiettivo.</p>-->
+
+        <img src="https://images.unsplash.com/photo-1716367840407-f9414a84b325?q=80&w=1631&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" />
+
+        <p><strong>La Scienza Dietro l'Allenamento e la Dieta</strong></p>
+        <p>Numerosi studi dimostrano che l'esercizio fisico regolare è essenziale per migliorare la salute cardiovascolare, aumentare la resistenza e ridurre lo stress. Combinato con una dieta ricca di nutrienti, puoi raggiungere una forma fisica ottimale e godere di una vita più sana.</p>
+
+        <h3>Iniziare il Tuo Viaggio di Benessere</h3>
+
+        <p>Molte persone ignorano il legame tra alimentazione e prestazioni fisiche. Mangiare bene non solo ti aiuta a mantenere il peso ideale, ma fornisce anche al tuo corpo l'energia necessaria per allenarti e affrontare le sfide quotidiane con maggiore vitalità.</p>
+
+        <p>Per iniziare il tuo viaggio di benessere, concentrati su allenamenti che includano attività cardiovascolari come la corsa, il nuoto o la bicicletta, insieme a esercizi di resistenza per tonificare i muscoli. Non dimenticare di bilanciare l'allenamento con una dieta che favorisca il recupero e la crescita muscolare.</p>
+
+        <img src="https://images.unsplash.com/photo-1689877020200-403d8542d95d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fGx1eHVyeSUyMGd5bXxlbnwwfHwwfHx8Mg%3D%3D" />
+        <p>Ogni piccolo passo conta. Non è necessario fare enormi cambiamenti subito. L'importante è essere costanti e pazienti, ascoltando sempre il tuo corpo. Aggiungere più verdure alla tua dieta, bere più acqua e fare attività fisica almeno tre volte a settimana può fare una grande differenza nel lungo periodo.</p>
+
+        <!-- Nuova Sezione: Cards -->
+        <section class="section-cards" id="news" >
+          <span id="cards" style="position: absolute; top: -100px;"></span>
+          <h2>Esplora di più</h2>
+          <div class="cards-container">
+            <div class="card">
+              <img src="https://images.unsplash.com/photo-1535914254981-b5012eebbd15?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Descrizione immagine" class="card-img">
+              <div class="card-body">
+                <h3 class="card-title">Titolo della Card</h3>
+                <p class="card-text">Breve descrizione del contenuto.</p>
+                <a href="#" class="card-link">Scopri di più</a>
+              </div>
+            </div>
+            <div class="card">
+              <img src="https://images.unsplash.com/photo-1518495973542-4542c06a5843?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Descrizione immagine" class="card-img">
+              <div class="card-body">
+                <h3 class="card-title">Titolo della Card</h3>
+                <p class="card-text">Breve descrizione del contenuto.</p>
+                <a href="#" class="card-link">Scopri di più</a>
+              </div>
+            </div>
+            <div class="card">
+              <img src="https://images.unsplash.com/photo-1524901548305-08eeddc35080?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Descrizione immagine" class="card-img">
+              <div class="card-body">
+                <h3 class="card-title">Titolo della Card</h3>
+                <p class="card-text">Breve descrizione del contenuto.</p>
+                <a href="#" class="card-link">Scopri di più</a>
+              </div>
+          </div>
+        </section>
+
+        <div class="comments-section"  id="feedbacks" >
+          <h2>Commenti</h2>
+          <div id="comments-container" >
+            <!-- Comment list will appear here -->
+          </div>
+
+          <h3>Lascia un commento:</h3>
+          <form id="comment-form" autocomplete="on">
+            <input type="text" id="name" placeholder="Il tuo nome" required autocomplete="name" />
+            <textarea id="comment" placeholder="Scrivi un commento..." required autocomplete="off"></textarea>
+            <button type="submit">Invia Commento</button>
+          </form>
+        </div>
+
+        <nav>
+          <ul>
+            <li><i class="fas fa-home"></i><a href="#home">Home</a></li>
+            <li><i class="fas fa-info-circle"></i><a href="#news">News</a></li>
+            <li><i class="fas fa-cogs"></i><a href="#feedbacks">Feedbacks</a></li>
+            <li><i class="fas fa-envelope"></i><a href="#contacts">Contact us</a></li>
+          </ul>
+        </nav>
+      </div>
+      
+      <footer>
+        <div class="social-left" id="contacts">
+          <p>&copy; 2025 HealthyLife. Tutti i diritti riservati.</p>
+          <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-f"></i> Facebook</a>
+          <a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter"></i> Twitter</a>
+          <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
+          <a href="https://www.linkedin.com" target="_blank"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
+          <a href="https://github.com" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+          <a href="https://www.reddit.com" target="_blank"><i class="fab fa-reddit"></i> Reddit</a>
+        </div>
+      </footer>
+
+      <script src="script.js"></script>
+      <script src="comment.js"></script>
+    </body>
+</html>
+
+
+
