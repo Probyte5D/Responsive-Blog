@@ -24,6 +24,28 @@ Welcome to the **Health & Fitness Blog** project, a platform dedicated to physic
 - **Database**: MySQL
 - **Other tools**: FontAwesome (for icons), Git for version control
 
+⚙️ Server & Database Architecture
+The backend is built with Node.js and Express, and it uses MySQL to store user comments. Below is an overview of how the system works:
+
+### 🔄 Data Flow
+The user submits a comment through the frontend form.
+
+The frontend sends a POST request to an Express API endpoint.
+
+The server validates the data and saves it in the comments table in MySQL.
+
+On page load, the server fetches existing comments via a SELECT query and sends them to the frontend for display.
+
+### 📁 Server Structure
+![Database example](images/database.png)
+server.js: Main entry point for the Express server.
+
+routes/comments.js: Handles routes related to user comments.
+
+db.js: Manages the MySQL database connection (using mysql2 or mysql npm package).
+
+
+
 ## 🛠️ How to Set Up the Project
 
 ### 1. Clone the repository
