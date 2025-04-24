@@ -32,3 +32,5 @@ yarn.lock
 # Optional: exclude build or dist folder if you generate static files
 # /dist
 # /build
+
+.history/
