@@ -7,12 +7,11 @@ const cors = require("cors");
 // importo il file delle rotte
 const commentRoutes = require('../routes/commentRoutes');
 
-// middleware file statici cartella public
+// file statici cartella public
 app.use(express.static('public'));
 
 
-
-// middleware CORS
+// CORS
 app.use(cors());
 
 // registro il body-parser

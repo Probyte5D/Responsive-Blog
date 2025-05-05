@@ -4,14 +4,14 @@ document.addEventListener("DOMContentLoaded", () => {
     const commentInput = document.getElementById("comment");
     const commentsContainer = document.getElementById("comments-container");
 
-    const API_URL = "http://localhost:3000/api/comments"; // Cambia se necessario
+    const API_URL = "http://localhost:3000/api/comments"; 
 
     // Funzione per caricare i commenti dal backend
     function loadComments() {
         fetch(API_URL)
             .then(response => response.json())
             .then(comments => {
-                commentsContainer.innerHTML = ""; // Svuota il contenitore prima di aggiornare
+                commentsContainer.innerHTML = ""; 
                 comments.forEach(comment => {
                     const commentDiv = document.createElement("div");
                     commentDiv.classList.add("comment");
@@ -34,7 +34,8 @@ console.log("Input Commento:", commentInput);
 
     // Funzione per inviare un nuovo commento
     commentForm.addEventListener("submit", (event) => {
-        event.preventDefault(); // Evita il ricaricamento della pagina
+        event.preventDefault();
+         // Evita il ricaricamento della pagina
 
         const newComment = {
             nome: nameInput.value,
@@ -58,11 +59,12 @@ console.log("Input Commento:", commentInput);
             console.log("Commento aggiunto:", data);
             nameInput.value = "";
             commentInput.value = "";
-            loadComments(); // Ricarica i commenti aggiornati
+            loadComments(); 
+            // Ricarica i commenti aggiornati
         })
         .catch(error => console.error("Errore nell'invio del commento:", error));
     });
 
-    // Carica i commenti inizialmente
+    // Carica i commenti iniziali
     loadComments();
 });

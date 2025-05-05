@@ -7,10 +7,11 @@ document.addEventListener('DOMContentLoaded', function() {
   
   const loadingBgs = document.querySelectorAll('.loading-bg');
 
-  const loadingImage = document.querySelector('.loading-image'); // L'immagine di caricamento
+  const loadingImage = document.querySelector('.loading-image'); 
 
   let load = 0;
-  let int = setInterval(blurring, 15); // Intervallo per il caricamento con sfocatura
+  let int = setInterval(blurring, 15); 
+  // Intervallo per il caricamento con sfocatura
 
   function blurring() {
     load++;
@@ -55,12 +56,12 @@ function toggleDark() {
 
   const loadingBg = document.querySelector('.loading-bg');
 
-  // Se la modalità dark è attiva, nascondi l'immagine chiara e mostra quella scura
+  // Se la modalità dark è attiva, nasconde l'immagine chiara e mostra quella scura
   if (document.body.classList.contains('dark-mode')) {
-    loadingBg.classList.add('dark');  // Aggiungi la classe per lo sfondo scuro
-    loadingBg.classList.remove('light');  // Rimuovi la classe per lo sfondo chiaro
+    loadingBg.classList.add('dark');  
+    loadingBg.classList.remove('light');  
   } else {
-    loadingBg.classList.add('light');  // Aggiungi la classe per lo sfondo chiaro
-    loadingBg.classList.remove('dark');  // Rimuovi la classe per lo sfondo scuro
+    loadingBg.classList.add('light');  
+    loadingBg.classList.remove('dark'); 
   }
 }

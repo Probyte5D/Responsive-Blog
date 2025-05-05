@@ -4,9 +4,9 @@ const mysql = require('mysql2');
 // Connessione al database
 const db = mysql.createConnection({
   host: 'localhost',
-  user: 'root',      // Modifica con il tuo username MySQL
-  password: 'admin', // Modifica con la tua password MySQL
-  database: 'Blog'   // Modifica con il nome del tuo database
+  user: 'root',      
+  password: 'admin', 
+  database: 'Blog'   
 });
 
 // Connessione al DB
@@ -22,13 +22,13 @@ db.connect((err) => {
 function index(req, res) {
   db.query('SELECT * FROM comments', (err, results) => {
     if (err) return res.status(500).json({ error: 'Errore recupero commenti' });
-    res.status(200).json(results);  // Restituisce tutti i commenti
+    res.status(200).json(results); 
   });
 }
 
 // Funzione per ottenere un commento specifico
 function show(req, res) {
-  const { id } = req.params;  // Estrai l'ID dalla richiesta
+  const { id } = req.params;  
 
   const query = 'SELECT * FROM comments WHERE id = ?';
   
@@ -38,26 +38,23 @@ function show(req, res) {
       return res.status(500).json({ error: 'Errore recupero commento' });
     }
     
-    if (results.length === 0) {  // Se il commento non esiste, restituisci 404
+    if (results.length === 0) {  
       return res.status(404).json({ message: 'Commento non trovato' });
     }
 
-    res.status(200).json(results[0]);  // Restituisce il commento trovato
+    res.status(200).json(results[0]);  
   });
 }
 function store(req, res) {
   const { nome, commento } = req.body;
 
-  console.log("📩 Dati ricevuti nel backend:", req.body);  // DEBUG
+  console.log("📩 Dati ricevuti nel backend:", req.body);  
 
   if (!nome || !commento) {
     return res.status(400).json({ error: "I dati richiesti (nome, commento) sono obbligatori." });
   }
 
-  // ❌ ERRORE ATTUALE: Stai inserendo 'post_id' anche se non esiste
-  // db.query('INSERT INTO comments (post_id, nome, commento) VALUES (?, ?, ?)', [post_id, nome, commento], (err, results) => {
 
-  // ✅ SOLUZIONE: Rimuovi 'post_id' dalla query
   db.query('INSERT INTO comments (nome, commento) VALUES (?, ?)', [nome, commento], (err, results) => {
     if (err) {
       console.error('❌ Errore nel salvataggio del commento:', err);
@@ -68,8 +65,6 @@ function store(req, res) {
   });
 }
 
-
-
 // Funzione per aggiornare un commento esistente
 function update(req, res) {
   const { id } = req.params;
@@ -78,7 +73,7 @@ function update(req, res) {
   db.query('UPDATE comments SET nome = ?, commento = ? WHERE id = ?', [nome, commento], (err, results) => {
     if (err) return res.status(500).json({ error: 'Errore aggiornamento commento' });
     
-    if (results.affectedRows === 0) {  // Se non è stato trovato un commento con quell'ID
+    if (results.affectedRows === 0) {  
       return res.status(404).json({ message: 'Commento non trovato' });
     }
     

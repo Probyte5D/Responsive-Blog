@@ -2,7 +2,7 @@ DROP DATABASE IF EXISTS Blog;
 CREATE DATABASE Blog;
 USE Blog;
 
--- Creiamo la tabella per i post (se non esiste già)
+-- tabella per i post 
 CREATE TABLE posts (
   id INT AUTO_INCREMENT PRIMARY KEY,
   titolo VARCHAR(255) NOT NULL,
@@ -10,15 +10,15 @@ CREATE TABLE posts (
   data_pubblicazione TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
--- Creiamo la tabella per i commenti senza foreign key
+--tabella per i commenti
 CREATE TABLE comments (
   id INT AUTO_INCREMENT PRIMARY KEY,
-  nome VARCHAR(100) NOT NULL, -- Nome dell'autore del commento
-  commento TEXT NOT NULL, -- Testo del commento
+  nome VARCHAR(100) NOT NULL,
+  commento TEXT NOT NULL, 
   data_commento TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
--- Inseriamo qualche commento di esempio
+-- insert
 INSERT INTO comments (nome, commento) 
 VALUES 
   ('Mario Rossi', 'Ottimo articolo!'),
